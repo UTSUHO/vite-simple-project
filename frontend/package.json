@@ -11,7 +11,10 @@
   },
   "dependencies": {
     "@mdi/font": "7.4.47",
+    "js-cookie": "^3.0.5",
+    "pinia": "^2.3.0",
     "roboto-fontface": "*",
+    "unplugin-auto-import": "^0.18.6",
     "vue": "^3.4.31",
     "vuetify": "^3.6.14"
   },

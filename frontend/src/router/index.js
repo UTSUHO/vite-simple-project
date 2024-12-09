@@ -7,7 +7,36 @@
 
 // Composables
 import { createRouter, createWebHistory } from 'vue-router/auto'
-import { routes } from 'vue-router/auto-routes'
+// import { routes } from 'vue-router/auto-routes'
+
+const routes = [
+  {
+    path: "/",
+    component: () => import("@/layouts/DefaultLayout.vue"),
+    children: [
+      {
+        path: "",
+        name: "layout",
+        // route level code-splitting
+        // this generates a separate chunk (about.[hash].js) for this route
+        // which is lazy-loaded when the route is visited.
+        redirect: "/home",
+        children: [
+          {
+            path: "home",
+            name: "home",
+            component: () => import("@/views/Home.vue"),
+          }
+        ],
+      },
+    ],
+  },
+  {
+    path: "/login",
+    component: () => import("@/views/login/index.vue"),
+  },
+];
+
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
