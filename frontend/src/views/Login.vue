@@ -10,8 +10,8 @@
                         </v-col>
 
                         <v-col cols="12" md="4">
-                            <v-text-field v-model="password" :type="`password`"  :counter="10" :rules="pwRules" label="密码"
-                                required></v-text-field>
+                            <v-text-field v-model="password" :type="`password`" :counter="10" :rules="pwRules"
+                                label="密码" required></v-text-field>
                         </v-col>
 
                         <v-col cols="12" md="4">
@@ -79,8 +79,6 @@ const loginRequest = () => {
         (error) => {
             if (error.data.status == 403) {
                 alert("请输入正确的用户名和密码");
-            } else {
-                // alert(`${error.data.message}`);
             }
         })
 }
