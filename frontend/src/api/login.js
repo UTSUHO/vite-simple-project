@@ -8,3 +8,11 @@ export function login(data) {
         data: data,
     });
 }
+
+export function isLogin(data) {
+    return request({
+        url: `${hostAddress}/isLogin`,
+        method: "post",
+        data: data,
+    });
+}

@@ -6,8 +6,8 @@
 
 // Plugins
 import vuetify from './vuetify'
-import router from '@/router'
 import pinia from '@/stores'
+import router from '@/router'
 import { registerStore } from '@/stores/main';
 
 export function registerPlugins(app) {
@@ -16,3 +16,4 @@ export function registerPlugins(app) {
   registerStore();
 }
 
+import "@/router/navigationGuards";

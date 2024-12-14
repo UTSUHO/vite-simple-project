@@ -16,11 +16,26 @@ app.get('/', (req, res) => {
 app.post('/login', (req, res) => {
     const data = req.body
     const { username, password } = data
+    console.log(username, password)
     if (username == 'admin' && password == 'nimda') {
-        res.json({ statusCode: 200, data: { name: 'admin',token:'token' } })
+        res.json({ statusCode: 200, data: { name: 'admin' } })
+    } else if (username == 'user' && password == 'resu') {
+        res.json({ statusCode: 200, data: { name: 'user' } })
     } else {
         res.status(401)
-        res.json({ statusCode: 401 })
+        res.json({ statusCode: 401, error: '越权访问' })
+    }
+})
+app.post('/isLogin', (req, res) => {
+    const data = req.body
+    const { token } = data
+    if (token == 'admin') {
+        res.json({ statusCode: 200 })
+    } else if (token == 'user') {
+        res.json({ statusCode: 200 })
+    } else {
+        res.status(401)
+        res.json({ statusCode: 401, error: '越权访问' })
     }
 })
 app.listen(port, () => {

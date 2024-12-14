@@ -68,8 +68,6 @@ const loginRequest = () => {
     login(formData).then(
         (res) => {
             if (res.statusCode == 200) {
-                console.log(res)
-                accountStore.setJwtToken(res.data.token)
                 accountStore.userName = res.data.name
                 // 跳转至首页
                 router.push("/");
