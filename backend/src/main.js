@@ -22,8 +22,8 @@ app.post('/login', (req, res) => {
     } else if (username == 'user' && password == 'resu') {
         res.json({ statusCode: 200, data: { name: 'user' } })
     } else {
-        res.status(401)
-        res.json({ statusCode: 401, error: '越权访问' })
+        res.status(403)
+        res.json({ statusCode: 403, error: '越权访问' })
     }
 })
 app.post('/isLogin', (req, res) => {

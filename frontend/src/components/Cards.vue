@@ -26,14 +26,12 @@
 <script setup>
 import { useBusinessStore } from '@/stores/business';
 import { useAccountStore } from "@/stores/account";
-import { storeToRefs } from "pinia";
 
 
 const businessStore = useBusinessStore()
 
 const accountStore = useAccountStore();
 
-// const { userName } = storeToRefs(accountStore);
 function handleBuy() {
     businessStore.buy({ name: props.name, price: props.price, user: accountStore.userName, counter: counter.value })
 }

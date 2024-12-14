@@ -23,6 +23,8 @@ function request(config) {
                     return false;
                 });
 
+            } else if (error.response && error.response.status === 403) {
+                alert('用户名密码不正确')
             }
 
             return Promise.reject(error.response);

@@ -80,7 +80,7 @@ const loginRequest = () => {
             if (error.data.status == 403) {
                 alert("请输入正确的用户名和密码");
             } else {
-                alert(`${error.data.message}`);
+                // alert(`${error.data.message}`);
             }
         })
 }
