@@ -20,6 +20,8 @@
             <v-list-item prepend-icon="mdi-script-text-outline" title="已购买的商品" value="order" to="/order"></v-list-item>
             <v-list-item v-if="userName == 'admin'" prepend-icon="mdi-orbit" title="个人中心" value="management"
                 to="/management"></v-list-item>
+                <v-list-item v-if="userName == 'admin'" prepend-icon="mdi-upload-box-outline" title="商品管理" value="goods"
+                to="/goods"></v-list-item>
         </v-list>
         <template v-slot:append>
             <v-btn variant="text" @click="logout" style="margin-left: -4px !important">

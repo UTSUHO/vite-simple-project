@@ -2,7 +2,7 @@
 import { defineStore } from 'pinia'
 import { ref } from 'vue';
 export const useAccountStore = defineStore('account', () => {
-  const userName = ref("");
+  const userName = ref("admin");
   function logout() {
     userName.value = ""
   }

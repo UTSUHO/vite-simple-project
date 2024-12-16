@@ -20,14 +20,23 @@
 </template>
 <script setup>
 import { useBusinessStore } from '@/stores/business';
+import { useAccountStore } from "@/stores/account";
+
 const businessStore = useBusinessStore()
+const accountStore = useAccountStore();
+
 const props = defineProps({
     type: {
         default: 'cart',
         type: String
     },
 })
-const items = props.type == 'cart' ? businessStore.cart : businessStore.boughtList
+const selfCartData = computed(() => {
+    return businessStore.cart.filter((i) => {
+        i.user == accountStore.userName
+    })
+})
+const items = props.type == 'cart' ? selfCartData : businessStore.boughtList
 const headers = [
     { title: '订单序号', value: 'order' },
     { title: '商品名称', value: 'name' },
